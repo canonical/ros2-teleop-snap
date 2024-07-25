@@ -117,13 +117,11 @@ apps:
 
 parts:
   ros2-teleop:
-    plugin: nil
+    plugin: colcon
+    source: .
     stage-packages:
       - wget
       - libssl3
-      - ros-humble-teleop-twist-joy
-      - ros-humble-teleop-twist-keyboard
-      - ros-humble-topic-tools
 
   # copy local scripts to the snap
   local-files:
