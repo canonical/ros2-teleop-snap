@@ -27,7 +27,7 @@ description: |
     The upstream package offers some default joystick configurations.
     Those can be set up with the joy-config parameter as follows:
 
-    snap set joy-config="ps3"
+    snap set ros2-teleop joy-config="ps3"
 
     In alternative, a custom configuration file can be used. The file can be provided
     by means of a URL. In such case, the snap will download the file and
@@ -117,13 +117,11 @@ apps:
 
 parts:
   ros2-teleop:
-    plugin: nil
+    plugin: colcon
+    source: .
     stage-packages:
       - wget
       - libssl3
-      - ros-humble-teleop-twist-joy
-      - ros-humble-teleop-twist-keyboard
-      - ros-humble-topic-tools
 
   # copy local scripts to the snap
   local-files:
