@@ -1,6 +1,6 @@
 #!/bin/bash -e
 
-TELEOP_JOY_CONFIG_PATH="$SNAP/opt/ros/humble/share/teleop_twist_joy/config"
+TELEOP_JOY_CONFIG_PATH="$SNAP/opt/ros/jazzy/share/teleop_twist_joy/config"
 SUPPORTED_JOY_CONFIGS=(files=$(basename -a "${TELEOP_JOY_CONFIG_PATH}"/*.config.yaml | sed 's/\.config\.yaml$//'))
 JOY_CONFIG="$(snapctl get joy-config)"
 
