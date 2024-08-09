@@ -69,14 +69,14 @@ description: |
 
 grade: stable
 confinement: strict
-base: core22
+base: core24
 
 contact: https://github.com/ubuntu-robotics/ros2-teleop-snap/issues
 issues: https://github.com/ubuntu-robotics/ros2-teleop-snap/issues
 
-architectures:
-  - build-on: amd64
-  - build-on: arm64
+platforms:
+  amd64:
+  arm64:
 
 hooks:
   configure:
@@ -88,7 +88,7 @@ apps:
     daemon: simple
     install-mode: disable
     plugs: [network, network-bind]
-    extensions: [ros2-humble-ros-base]
+    extensions: [ros2-jazzy-ros-base]
 
   joy:
     command: usr/bin/joy_launcher.sh
@@ -98,19 +98,19 @@ apps:
     environment:
       LD_LIBRARY_PATH: "$SNAP/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/pulseaudio:$LD_LIBRARY_PATH"
     plugs: [hardware-observe, joystick, network, network-bind]
-    extensions: [ros2-humble-ros-base]
+    extensions: [ros2-jazzy-ros-base]
 
   key:
     command: usr/bin/key_launcher.sh
     command-chain: [usr/bin/mux_select_key_vel.sh]
     plugs: [network, network-bind]
-    extensions: [ros2-humble-ros-base]
+    extensions: [ros2-jazzy-ros-base]
 
   mux-select:
     command: usr/bin/mux_select.sh
     completer: usr/bin/mux_completer.sh
     plugs: [network, network-bind]
-    extensions: [ros2-humble-ros-base]
+    extensions: [ros2-jazzy-ros-base]
 
   reset-config:
     command: usr/bin/reset_config.sh

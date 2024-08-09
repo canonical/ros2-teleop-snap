@@ -2,8 +2,8 @@
 
 . $SNAP/usr/bin/reset_config.sh
 
-if ! snapctl is-connected ros-humble-ros-base; then
-  logger -t ${SNAP_NAME} "Plug 'ros-humble-ros-base' isn't connected, please run: snap connect $SNAP_NAME:ros-humble-ros-base <providing-snap>"
+if ! snapctl is-connected ros-jazzy-ros-base; then
+  logger -t ${SNAP_NAME} "Plug 'ros-jazzy-ros-base' isn't connected, please run: snap connect $SNAP_NAME:ros-jazzy-ros-base <providing-snap>"
 fi
 
 for PLUG in hardware-observe joystick; do
