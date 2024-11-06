@@ -66,7 +66,7 @@ jobs:
         sudo snap set ros2-teleop joy-config="ps3"
 
         ## Install ROS 2 cli
-        sudo snap install ros2-cli --channel=humble/beta
+        sudo snap install ros2-cli --channel=humble/edge
 
         sudo snap start ros2-teleop.joy
 
