@@ -1,6 +1,5 @@
 name: ros2-teleop
 version: '0.1'
-license: Apache-2.0
 summary: The ROS 2 teleop snap
 description: |
   The ROS 2 teleop snap allows for teleoperating a robot
@@ -67,12 +66,16 @@ description: |
   Note that when launching the joy or key app,
   the appropriate topic is automatically selected.
 
+website: https://github.com/canonical/ros2-teleop-snap
+source-code: https://github.com/canonical/ros2-teleop-snap
+issues: https://github.com/canonical/ros2-teleop-snap/issues
+contact: ubuntu-robotics-community@canonical.com
+
+license: Apache-2.0
+
 grade: stable
 confinement: strict
 base: core24
-
-contact: https://github.com/ubuntu-robotics/ros2-teleop-snap/issues
-issues: https://github.com/ubuntu-robotics/ros2-teleop-snap/issues
 
 platforms:
   amd64:
