@@ -5,6 +5,9 @@ on:
       - 'humble/*'
     branches:
       - humble
+    paths-ignore:
+      - README.md
+      - .gitignore
   pull_request:
     branches:
       - humble
@@ -15,6 +18,10 @@ on:
         required: false
         type: string
         default: ${{ github.ref }}
+
+concurrency:
+  group: ${{ github.head_ref || github.run_id }}
+  cancel-in-progress: true
 
 jobs:
   snap:
