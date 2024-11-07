@@ -6,10 +6,10 @@ on:
 
 jobs:
   humble:
-    uses: ./.github/workflows/snap.yaml@humble
+    uses: canonical/.github/workflows/snap.yaml@humble
     with:
       git-ref: "humble"
   jazzy:
-    uses: ./.github/workflows/snap.yaml@jazzy
+    uses: canonical/.github/workflows/snap.yaml@jazzy
     with:
       git-ref: "jazzy"
