@@ -1,8 +1,16 @@
 name: snap
 on:
   push:
+    tags:
+      - 'jazzy/*'
     branches:
       - jazzy
+    paths-ignore:
+      - .github/worflows/promote.yaml
+      - .github/workflows/monthly.yaml
+      - .github/workflows/keepalive.yaml
+      - README.md
+      - .gitignore
   pull_request:
     branches:
       - jazzy
@@ -13,6 +21,10 @@ on:
         required: false
         type: string
         default: ${{ github.ref }}
+
+concurrency:
+  group: ${{ github.head_ref || github.run_id }}
+  cancel-in-progress: true
 
 jobs:
   snap:
