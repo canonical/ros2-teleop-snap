@@ -1,5 +1,5 @@
 name: ros2-teleop
-adopt-info: ros2-teleop
+version: git
 summary: The ROS 2 teleop snap
 description: |
   The ROS 2 teleop snap allows for teleoperating a robot
@@ -122,13 +122,6 @@ parts:
   ros2-teleop:
     plugin: colcon
     source: .
-    override-pull: |
-      # set version and grade from code
-      git config --global --add safe.directory '*'
-      version="$(git describe --always --tags| sed -e 's/^v//;s/-/+git/;y/-/./')"
-      [ -n "$(echo $version | grep "+git")" ] && grade=devel || grade=stable
-      craftctl set version="${version}"
-      craftctl default
     stage-packages:
       - wget
       - libssl3
