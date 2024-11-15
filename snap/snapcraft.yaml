@@ -1,5 +1,5 @@
 name: ros2-teleop
-version: git
+version: '0.1.0'
 summary: The ROS 2 teleop snap
 description: |
   The ROS 2 teleop snap allows for teleoperating a robot
