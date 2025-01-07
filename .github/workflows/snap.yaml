@@ -22,10 +22,6 @@ on:
         type: string
         default: ${{ github.ref }}
 
-concurrency:
-  group: ${{ github.head_ref || github.run_id }}
-  cancel-in-progress: true
-
 jobs:
   snap:
     uses: canonical/robotics-actions-workflows/.github/workflows/snap.yaml@main
