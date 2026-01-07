@@ -7,9 +7,11 @@ on:
 jobs:
   humble:
     uses: canonical/ros2-teleop-snap/.github/workflows/snap.yaml@humble
+    secrets: inherit
     with:
       git-ref: "humble"
   jazzy:
     uses: canonical/ros2-teleop-snap/.github/workflows/snap.yaml@jazzy
+    secrets: inherit
     with:
       git-ref: "jazzy"
