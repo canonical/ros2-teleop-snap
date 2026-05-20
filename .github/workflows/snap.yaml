@@ -65,6 +65,8 @@ jobs:
         sudo snap start ros2-teleop.joy
 
         sleep 30
+        sudo snap logs ros2-teleop.joy
+        ros2 topic list
 
         ## check that services are available
         check_existence topic joy_vel 30
