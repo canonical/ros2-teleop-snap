@@ -6,11 +6,17 @@ on:
 
 jobs:
   humble:
+    permissions:
+      contents: read
+      actions: write
     uses: canonical/ros2-teleop-snap/.github/workflows/snap.yaml@humble
     secrets: inherit
     with:
       git-ref: "humble"
   jazzy:
+    permissions:
+      contents: read
+      actions: write
     uses: canonical/ros2-teleop-snap/.github/workflows/snap.yaml@jazzy
     secrets: inherit
     with:
