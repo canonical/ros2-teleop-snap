@@ -75,7 +75,7 @@ license: Apache-2.0
 
 grade: stable
 confinement: strict
-base: core24
+base: core26
 
 platforms:
   amd64:
