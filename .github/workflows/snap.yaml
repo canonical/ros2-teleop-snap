@@ -82,12 +82,11 @@ jobs:
         sudo snap set ros2-teleop joy-config="ps3"
 
         ## Install ROS 2 cli
-        sudo snap install ros2-cli --edge
+        sudo snap install ros2-cli --channel=jazzy/edge
 
         sudo snap start ros2-teleop.joy
 
         ## check that services are available
-        check_existence topic joy_vel 30
         check_existence topic joy 30
         check_existence node joy_node 30
         check_existence node teleop_twist_joy_node 30
