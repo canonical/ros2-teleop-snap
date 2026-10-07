@@ -86,8 +86,8 @@ jobs:
 
         sudo snap start ros2-teleop.joy
 
-        ## check daemon state (more stable than graph discovery in CI)
+        ## check daemon state (snapd 'Current' column; one-shot services start disabled)
         sudo snap services ros2-teleop | tee /tmp/ros2-teleop-services.txt
-        grep -Eq 'ros2-teleop.joy\s+enabled\s+active' /tmp/ros2-teleop-services.txt
+        grep -Eq 'ros2-teleop\.joy\s+\S+\s+active' /tmp/ros2-teleop-services.txt
 
         sudo snap stop ros2-teleop.joy
