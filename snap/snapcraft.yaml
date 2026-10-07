@@ -75,7 +75,7 @@ license: Apache-2.0
 
 grade: stable
 confinement: strict
-base: core24
+base: core26
 
 platforms:
   amd64:
@@ -91,7 +91,7 @@ apps:
     daemon: simple
     install-mode: disable
     plugs: [network, network-bind]
-    extensions: [ros2-jazzy-ros-base]
+    extensions: [ros2-lyrical-ros-base]
 
   joy:
     command: usr/bin/joy_launcher.sh
@@ -101,19 +101,19 @@ apps:
     environment:
       LD_LIBRARY_PATH: "$SNAP/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/pulseaudio:$LD_LIBRARY_PATH"
     plugs: [hardware-observe, joystick, network, network-bind]
-    extensions: [ros2-jazzy-ros-base]
+    extensions: [ros2-lyrical-ros-base]
 
   key:
     command: usr/bin/key_launcher.sh
     command-chain: [usr/bin/mux_select_key_vel.sh]
     plugs: [network, network-bind]
-    extensions: [ros2-jazzy-ros-base]
+    extensions: [ros2-lyrical-ros-base]
 
   mux-select:
     command: usr/bin/mux_select.sh
     completer: usr/bin/mux_completer.sh
     plugs: [network, network-bind]
-    extensions: [ros2-jazzy-ros-base]
+    extensions: [ros2-lyrical-ros-base]
 
   reset-config:
     command: usr/bin/reset_config.sh

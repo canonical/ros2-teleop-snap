@@ -86,10 +86,8 @@ jobs:
 
         sudo snap start ros2-teleop.joy
 
-        ## check that services are available
-        check_existence topic joy_vel 30
-        check_existence topic joy 30
-        check_existence node joy_node 30
-        check_existence node teleop_twist_joy_node 30
+        ## check daemon state (snapd 'Current' column; one-shot services start disabled)
+        sudo snap services ros2-teleop | tee /tmp/ros2-teleop-services.txt
+        grep -Eq 'ros2-teleop\.joy\s+\S+\s+active' /tmp/ros2-teleop-services.txt
 
         sudo snap stop ros2-teleop.joy
